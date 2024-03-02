@@ -52,3 +52,7 @@ async function generatePasswords() {
     document.getElementById('password-1').value = password1;
     document.getElementById('password-2').value = password2;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.generate-passwords').addEventListener('click', generatePasswords);
+});
