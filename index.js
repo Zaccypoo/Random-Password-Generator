@@ -52,5 +52,3 @@ async function generatePasswords() {
     document.getElementById('password-1').value = password1;
     document.getElementById('password-2').value = password2;
 }
-
-window.generatePassword = generatePassword
