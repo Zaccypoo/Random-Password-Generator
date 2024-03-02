@@ -1,5 +1,7 @@
 import { characters } from "./utils/constants";
 import { getRequestBody } from "./utils/getRequestBody";
+import { copyText, displayCopied } from "./utils/copy";
+import { displayError } from "./utils/error";
 
 async function generatePassword(passwordLength) {
   let password = "";
@@ -30,6 +32,7 @@ async function generatePassword(passwordLength) {
     }
   } catch (error) {
     console.error("Error fetching random data:", error.message);
+    displayError(error.message);
   }
 
   return password;
@@ -43,40 +46,24 @@ async function generatePasswords() {
   document.getElementById("password-2").value = password2;
 }
 
+// Event listeners
+
 document.addEventListener("DOMContentLoaded", function () {
   document
     .querySelector(".generate-passwords")
     .addEventListener("click", generatePasswords);
-});
 
-async function copyTextToClipboard(text) {
-  try {
-    await navigator.clipboard.writeText(text);
-  } catch (e) {
-    console.error("Failed to copy: ", e.message);
-  }
-}
-
-function displayCopied(elementNumber) {
-  const copied = document.getElementById(`copied-password-${elementNumber}`);
-  copied.style.visibility = "visible";
-  setTimeout(() => {
-    copied.style.visibility = "hidden";
-  }, 2000);
-}
-
-document.addEventListener("DOMContentLoaded", function () {
   document
     .querySelector(".copy-password-1")
     .addEventListener("click", function () {
-      copyTextToClipboard(document.getElementById("password-1").value);
+      copyText(document.getElementById("password-1").value);
       displayCopied(1);
     });
 
   document
     .querySelector(".copy-password-2")
     .addEventListener("click", function () {
-      copyTextToClipboard(document.getElementById("password-2").value);
+      copyText(document.getElementById("password-2").value);
       displayCopied(2);
     });
 });
