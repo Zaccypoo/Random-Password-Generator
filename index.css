@@ -1,84 +1,130 @@
 body {
-    margin: 0;
-    background-color: #1C1C1C;
-    font-family: 'Karla', 'Inter', sans-serif;
-
+  margin: 0;
+  background-color: #1c1c1c;
+  font-family: "Karla", "Inter", sans-serif;
 }
 
 .container {
-    max-width: 100%;
-    height: 550px;
-    background-color: #273549;
-    display: flex;
-    flex-direction: column;
-    color: #D5D4D8;
-    margin: 50px;
-    padding-top: 115px;
-    padding-left: 55px;
-    padding-right: 55px;
-    padding-bottom: 10
+  max-width: 100%;
+  height: 550px;
+  background-color: #273549;
+  display: flex;
+  flex-direction: column;
+  color: #d5d4d8;
+  margin: 50px;
+  padding-top: 115px;
+  padding-left: 55px;
+  padding-right: 55px;
+  padding-bottom: 10;
 }
 
 .title {
-    margin: 0px;
-    font-family: 'Karla', 'Inter', sans-serif;
-    font-size: 40px;
+  margin: 0px;
+  font-family: "Karla", "Inter", sans-serif;
+  font-size: 40px;
 }
 
 .subtitle {
-    margin-top: 10px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 200px;
-    font-size: 20px;
+  margin-top: 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: 200px;
+  font-size: 20px;
 }
 
-.white, .green {
+.white,
+.green {
   display: block; /* This makes each span take up the full width, causing a line break */
 }
 
 .white {
-    color: white;
+  color: white;
 }
 
 .green {
-    color: #4ADF86;
+  color: #4adf86;
 }
 
 .generate-passwords {
-    width: 250px;
-    height: 50px;
-    margin-top: 40px;
-    margin-bottom: 0px;
-    border-radius: 10px;
-    border: none;
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    font-weight: 300px;
-    background-color: #4ADF86;
-    color: white;
+  width: 250px;
+  height: 50px;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 300px;
+  background-color: #4adf86;
+  color: white;
+  cursor: pointer;
+}
+
+.generate-passwords:hover {
+  background-color: #3ac16a;
+}
+
+.copy-password-1,
+.copy-password-2 {
+  width: 60px;
+  height: 40px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 300px;
+  background-color: #4adf86;
+  color: white;
+  cursor: pointer;
+}
+
+.copy-password-1:hover,
+.copy-password-2:hover {
+  background-color: #3ac16a;
+}
+
+.copied-password {
+  color: #4adf86;
+  font-size: 14px;
+  font-weight: 300px;
+  visibility: hidden;
+}
+
+.password-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 550px;
+  color: #4adf86;
+  padding: 10px;
+}
+
+.password-container div {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
 }
 
 .horizontal-rule {
-    border: 0.5px solid #2F3E53; 
-    margin: 35px 0;
-    width: 550px;
+  border: 0.5px solid #2f3e53;
+  margin: 35px 0;
+  width: 550px;
 }
 
 .input-container {
-    display: flex;
-    justify-content: space-between;
-    width: 550px;
+  display: flex;
+  justify-content: space-between;
+  width: 550px;
 }
 
 .input-container input {
-    width: 255px;
-    height: 40px;
-    border-radius: 10px;
-    border: none;
-    background-color: #2F3E53;
-    color: #4ADF86;
-    text-align: center
+  width: 255px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: #2f3e53;
+  color: #4adf86;
+  text-align: center;
 }
-
-
-

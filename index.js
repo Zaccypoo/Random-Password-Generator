@@ -1,15 +1,6 @@
 import { characters } from "./utils/constants";
 import { getRequestBody } from "./utils/getRequestBody";
 
-/**
- * Changes:
- * - Moved characters array to utils/constants.js
- * - Created a function that returns the request body and moved it to utils/getRequestBody.js
- * - Removed the apiKey variable from index.js used dotenv to load it from .env
- * - Moved fallback logic into else block
- * - Logged error.message instead of error
- */
-
 async function generatePassword(passwordLength) {
   let password = "";
   const requestBody = getRequestBody(passwordLength, characters);
@@ -56,4 +47,36 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .querySelector(".generate-passwords")
     .addEventListener("click", generatePasswords);
+});
+
+async function copyTextToClipboard(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch (e) {
+    console.error("Failed to copy: ", e.message);
+  }
+}
+
+function displayCopied(elementNumber) {
+  const copied = document.getElementById(`copied-password-${elementNumber}`);
+  copied.style.visibility = "visible";
+  setTimeout(() => {
+    copied.style.visibility = "hidden";
+  }, 2000);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .querySelector(".copy-password-1")
+    .addEventListener("click", function () {
+      copyTextToClipboard(document.getElementById("password-1").value);
+      displayCopied(1);
+    });
+
+  document
+    .querySelector(".copy-password-2")
+    .addEventListener("click", function () {
+      copyTextToClipboard(document.getElementById("password-2").value);
+      displayCopied(2);
+    });
 });

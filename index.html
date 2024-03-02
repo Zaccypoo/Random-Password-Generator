@@ -13,8 +13,23 @@
             <button class="generate-passwords" >Generate Passwords</button>
             <hr class="horizontal-rule">
                 <div class="input-container">
-                    <input type="text" id="password-1" readonly></input>
-                    <input type="text" id="password-2" readonly></input>
+                    <div class="password-container">
+                        <label for="password-1">Password 1</label>
+                        <div>
+                            <input type="text" id="password-1" readonly></input>
+                            <button class="copy-password-1">Copy</button>
+                        </div>
+                        <h3 class="copied-password" id="copied-password-1">Copied!</h3>
+                    </div>
+                    <div class="password-container">
+                        <label for="password-2">Password 2</label>
+                        <div>
+                            <input type="text" id="password-2" readonly></input>
+                            <button class="copy-password-2">Copy</button>
+                        </div>
+                        <h3 class="copied-password" id="copied-password-2">Copied!</h3>
+
+                    </div>
                 </div>
             <script src="index.js" type="module"></script>
         </div>
